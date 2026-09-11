@@ -1,0 +1,68 @@
+apiVersion: v1
+entries:
+  redis:
+  - annotations:
+      category: Database
+      images: |
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.29.2-debian-12-r3
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:12-debian-12-r16
+        - name: redis
+          image: docker.io/bitnami/redis:7.2.4-debian-12-r9
+        - name: redis-exporter
+          image: docker.io/bitnami/redis-exporter:1.58.0-debian-12-r4
+        - name: redis-sentinel
+          image: docker.io/bitnami/redis-sentinel:7.2.4-debian-12-r7
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 7.2.4
+    created: "2026-09-11T17:45:42.331318445+02:00"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: 0d3269c8a9a676622508cedda68a6595d15770bdda899931a7e37817adcb8daf
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/redis
+    urls:
+    - https://pharaofranz.github.io/science-platform/charts/redis-18.19.4.tgz
+    version: 18.19.4
+  skaha:
+  - apiVersion: v2
+    appVersion: 1.4.0
+    created: "2026-09-11T17:45:42.327141172+02:00"
+    dependencies:
+    - name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: ^18.19.0
+    description: A Helm chart to install the Skaha web service of the CANFAR Science
+      Platform
+    digest: 37b1165186d51c0dd4245f7a29f03c2b57574d50567b69d6514b6a96f9e5c64c
+    icon: https://www.canfar.net/css/images/logo.png
+    maintainers:
+    - email: djenkins.cadc@gmail.com
+      name: Dustin Jenkins
+    - email: shiny.brar@nrc-cnrc.gc.ca
+      name: Shiny Brar
+    name: skaha
+    type: application
+    urls:
+    - https://pharaofranz.github.io/science-platform/skaha-1.7.0.tgz
+    version: 1.7.0
+generated: "2026-09-11T17:45:42.319831594+02:00"
